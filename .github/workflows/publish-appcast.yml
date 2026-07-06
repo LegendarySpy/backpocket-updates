@@ -1,0 +1,100 @@
+name: Publish Appcast
+
+on:
+  release:
+    types: [published, edited, deleted, unpublished]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  APP_NAME: Backpocket
+  SPARKLE_VERSION: 2.9.4
+
+jobs:
+  publish:
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out updates site
+        uses: actions/checkout@v4
+
+      - name: Install Sparkle tools
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release download "$SPARKLE_VERSION" \
+            --repo sparkle-project/Sparkle \
+            --pattern "Sparkle-${SPARKLE_VERSION}.tar.xz" \
+            --dir "$RUNNER_TEMP"
+          mkdir -p "$RUNNER_TEMP/sparkle"
+          tar -xJf "$RUNNER_TEMP/Sparkle-${SPARKLE_VERSION}.tar.xz" -C "$RUNNER_TEMP/sparkle"
+          echo "SPARKLE_GENERATE_APPCAST=$RUNNER_TEMP/sparkle/bin/generate_appcast" >> "$GITHUB_ENV"
+
+      - name: Build appcast from latest published release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
+        run: |
+          set -euo pipefail
+          ALL_RELEASES_JSON="$RUNNER_TEMP/releases.json"
+          RELEASE_JSON="$RUNNER_TEMP/latest-release.json"
+          WORK_DIR="$RUNNER_TEMP/appcast"
+          mkdir -p "$WORK_DIR"
+
+          gh api "repos/${GITHUB_REPOSITORY}/releases" \
+            --paginate \
+            --slurp \
+            > "$ALL_RELEASES_JSON"
+          jq '[.[][] | select(.draft == false and .prerelease == false)] | sort_by(.published_at) | last // empty' \
+            "$ALL_RELEASES_JSON" > "$RELEASE_JSON"
+
+          if [ ! -s "$RELEASE_JSON" ]; then
+            cat > appcast.xml <<'XML'
+          <?xml version="1.0" encoding="utf-8"?>
+          <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+            <channel>
+              <title>Backpocket Changelog</title>
+              <link>https://github.com/LegendarySpy/backpocket-updates/releases</link>
+              <description>Backpocket app updates</description>
+              <language>en</language>
+            </channel>
+          </rss>
+          XML
+            exit 0
+          fi
+
+          TAG="$(jq -r '.tag_name' "$RELEASE_JSON")"
+          if ! jq -e --arg asset "${APP_NAME}.zip" '.assets[] | select(.name == $asset)' "$RELEASE_JSON" >/dev/null; then
+            echo "::error::Published release ${TAG} is missing ${APP_NAME}.zip"
+            exit 1
+          fi
+
+          gh release download "$TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern "${APP_NAME}.zip" \
+            --dir "$WORK_DIR"
+          jq -r '.body // ""' "$RELEASE_JSON" > "$WORK_DIR/${APP_NAME}.md"
+
+          printf "%s" "$SPARKLE_PRIVATE_KEY" | "$SPARKLE_GENERATE_APPCAST" \
+            --ed-key-file - \
+            --download-url-prefix "https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}" \
+            --embed-release-notes \
+            "$WORK_DIR"
+
+          cp "$WORK_DIR/appcast.xml" appcast.xml
+
+      - name: Commit appcast
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add appcast.xml
+          if git diff --cached --quiet; then
+            echo "appcast.xml is already up to date."
+          else
+            git commit -m "Update Backpocket appcast"
+            git push
+          fi
