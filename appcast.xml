@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Backpocket Updates</title>
+    <link>https://github.com/LegendarySpy/backpocket-updates</link>
+    <description>Backpocket app updates</description>
+  </channel>
+</rss>
