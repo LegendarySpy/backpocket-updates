@@ -1,8 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
-  <channel>
-    <title>Backpocket Updates</title>
-    <link>https://github.com/LegendarySpy/backpocket-updates</link>
-    <description>Backpocket app updates</description>
-  </channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Backpocket Updates</title>
+        <link>https://github.com/LegendarySpy/backpocket-updates</link>
+        <description>Backpocket app updates</description>
+        <item>
+            <title>0.1.0</title>
+            <pubDate>Mon, 06 Jul 2026 18:54:14 +0000</pubDate>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[Update test
+]]></description>
+            <enclosure url="https://github.com/LegendarySpy/backpocket-updates/releases/download/Backpocket.zip" length="1362419" type="application/octet-stream" sparkle:edSignature="ooU8NCerxamkKqXPNaQ0Yy6xFxtIWgYc/QSQRevXmNXLB73f6J1+4husinOUzk6pdAtQ1iD7FUOJYmXNoInMBA=="/>
+        </item>
+    </channel>
 </rss>
