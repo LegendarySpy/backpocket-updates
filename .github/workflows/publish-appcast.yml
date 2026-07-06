@@ -67,14 +67,18 @@ jobs:
           fi
 
           TAG="$(jq -r '.tag_name' "$RELEASE_JSON")"
-          if ! jq -e --arg asset "${APP_NAME}.zip" '.assets[] | select(.name == $asset)' "$RELEASE_JSON" >/dev/null; then
-            echo "::error::Published release ${TAG} is missing ${APP_NAME}.zip"
+          ASSET_NAME="$(jq -r --arg dmg "${APP_NAME}.dmg" --arg zip "${APP_NAME}.zip" '
+            ([.assets[] | select(.name == $dmg)][0] // [.assets[] | select(.name == $zip)][0] // empty).name
+          ' "$RELEASE_JSON")"
+
+          if [ -z "$ASSET_NAME" ]; then
+            echo "::error::Published release ${TAG} is missing ${APP_NAME}.dmg"
             exit 1
           fi
 
           gh release download "$TAG" \
             --repo "$GITHUB_REPOSITORY" \
-            --pattern "${APP_NAME}.zip" \
+            --pattern "$ASSET_NAME" \
             --dir "$WORK_DIR"
           jq -r '.body // ""' "$RELEASE_JSON" > "$WORK_DIR/${APP_NAME}.md"
 
