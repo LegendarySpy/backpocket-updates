@@ -3,22 +3,18 @@
     <channel>
         <title>Backpocket</title>
         <item>
-            <title>1.0.1</title>
-            <pubDate>Sun, 30 Aug 2026 06:15:16 +0000</pubDate>
-            <sparkle:version>10</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <title>1.0.2</title>
+            <pubDate>Sun, 30 Aug 2026 16:32:51 +0000</pubDate>
+            <sparkle:version>11</sparkle:version>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[## What’s new in 1.0.1
+            <description sparkle:format="markdown"><![CDATA[## What’s new in 1.0.2
 
-- A new first-run setup that makes Accessibility permission clear and easy
-- New Backpocket app and menu bar icons
-- Redesigned Settings and About, including built-in update controls
-- Import and export backups for your saved facts
-- Better handling for locked facts, iCloud sync, and the five-fact free plan
-- Privacy, terms, and bug reporting are now available inside the app
+- Backpocket now opens right away after the double-tap.
+- Faster, more reliable placement when switching between apps.
 
 ]]></description>
-            <enclosure url="https://github.com/LegendarySpy/backpocket-updates/releases/download/v1.0.1/Backpocket.dmg" length="3297551" type="application/octet-stream" sparkle:edSignature="m/VdFdumHMnUSfokbJrWzMGMcmeq6lCGPcspvmSIppJTnGu9BcHX6ypswzD93OILU4NOF1/JmePr0FjEXuq1Bw=="/>
+            <enclosure url="https://github.com/LegendarySpy/backpocket-updates/releases/download/v1.0.2/Backpocket.dmg" length="3295404" type="application/octet-stream" sparkle:edSignature="0Cglamhjg4wgP6rA4SUW8dsspxbrIrA9MbZzjZndTdTyFW4QDdBsskt93QYMMXi3QE+nw0VQYqifuLH5/0veBw=="/>
         </item>
     </channel>
 </rss>
