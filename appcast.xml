@@ -3,23 +3,22 @@
     <channel>
         <title>Backpocket</title>
         <item>
-            <title>0.3.0</title>
-            <pubDate>Sun, 30 Aug 2026 06:09:38 +0000</pubDate>
-            <sparkle:version>9</sparkle:version>
-            <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
+            <title>1.0.1</title>
+            <pubDate>Sun, 30 Aug 2026 06:15:16 +0000</pubDate>
+            <sparkle:version>10</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[## What's new in 0.3.0
+            <description sparkle:format="markdown"><![CDATA[## What’s new in 1.0.1
 
-- Quick capture: select text in any app, then right-click → Services → Save to Backpocket
-- The selected result now previews exactly what Return will type
-- Search matches inside fact values, not just their names
-- Suggestions are ranked by the focused field's label, so the right fact is usually already selected
-- The palette now anchors reliably in Chrome and other Chromium apps, and opens instantly and settled
-- More dependable caret anchoring, focus, and placement across apps
-- A nicer installer: the download now opens as a proper drag-to-Applications window
+- A new first-run setup that makes Accessibility permission clear and easy
+- New Backpocket app and menu bar icons
+- Redesigned Settings and About, including built-in update controls
+- Import and export backups for your saved facts
+- Better handling for locked facts, iCloud sync, and the five-fact free plan
+- Privacy, terms, and bug reporting are now available inside the app
 
 ]]></description>
-            <enclosure url="https://github.com/LegendarySpy/backpocket-updates/releases/download/v0.3.0/Backpocket.dmg" length="1436170" type="application/octet-stream" sparkle:edSignature="XSNWoZ8eo4UxULkGE//ZQVUXy/9VWnVBVSX4NYc60Vk/+JiMh9IyIdciNwkoZjrySsCnUeymKaKUFTa2Sbs3BQ=="/>
+            <enclosure url="https://github.com/LegendarySpy/backpocket-updates/releases/download/v1.0.1/Backpocket.dmg" length="3297551" type="application/octet-stream" sparkle:edSignature="m/VdFdumHMnUSfokbJrWzMGMcmeq6lCGPcspvmSIppJTnGu9BcHX6ypswzD93OILU4NOF1/JmePr0FjEXuq1Bw=="/>
         </item>
     </channel>
 </rss>
