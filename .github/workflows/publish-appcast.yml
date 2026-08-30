@@ -86,7 +86,7 @@ jobs:
 
           printf "%s" "$SPARKLE_PRIVATE_KEY" | "$SPARKLE_GENERATE_APPCAST" \
             --ed-key-file - \
-            --download-url-prefix "https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}" \
+            --download-url-prefix "https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/" \
             --embed-release-notes \
             "$WORK_DIR"
 
