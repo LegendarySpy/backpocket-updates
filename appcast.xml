@@ -3,18 +3,18 @@
     <channel>
         <title>Backpocket</title>
         <item>
-            <title>1.0.2</title>
-            <pubDate>Sun, 30 Aug 2026 16:32:51 +0000</pubDate>
-            <sparkle:version>11</sparkle:version>
-            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+            <title>1.0.3</title>
+            <pubDate>Sun, 30 Aug 2026 18:05:40 +0000</pubDate>
+            <sparkle:version>12</sparkle:version>
+            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[## What’s new in 1.0.2
+            <description sparkle:format="markdown"><![CDATA[## What’s new in 1.0.3
 
-- Backpocket now opens right away after the double-tap.
-- Faster, more reliable placement when switching between apps.
+- Lower background activity while Backpocket is sitting in your menu bar.
+- Update and license checks no longer run more often than they need to.
 
 ]]></description>
-            <enclosure url="https://github.com/LegendarySpy/backpocket-updates/releases/download/v1.0.2/Backpocket.dmg" length="3295404" type="application/octet-stream" sparkle:edSignature="0Cglamhjg4wgP6rA4SUW8dsspxbrIrA9MbZzjZndTdTyFW4QDdBsskt93QYMMXi3QE+nw0VQYqifuLH5/0veBw=="/>
+            <enclosure url="https://github.com/LegendarySpy/backpocket-updates/releases/download/v1.0.3/Backpocket.dmg" length="3294104" type="application/octet-stream" sparkle:edSignature="lO8wqf0eGLl3L7aNMR7GSoR9783Gjuv55qHP58DO8B842NPR7GWPV8AJY5iSh5FDBq4lBaZ128NhJR2rIHa7Cw=="/>
         </item>
     </channel>
 </rss>
