@@ -4,7 +4,7 @@
         <title>Backpocket</title>
         <item>
             <title>0.3.0</title>
-            <pubDate>Sun, 30 Aug 2026 06:08:07 +0000</pubDate>
+            <pubDate>Sun, 30 Aug 2026 06:09:38 +0000</pubDate>
             <sparkle:version>9</sparkle:version>
             <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
@@ -19,7 +19,7 @@
 - A nicer installer: the download now opens as a proper drag-to-Applications window
 
 ]]></description>
-            <enclosure url="https://github.com/LegendarySpy/backpocket-updates/releases/download/Backpocket.dmg" length="1436170" type="application/octet-stream" sparkle:edSignature="XSNWoZ8eo4UxULkGE//ZQVUXy/9VWnVBVSX4NYc60Vk/+JiMh9IyIdciNwkoZjrySsCnUeymKaKUFTa2Sbs3BQ=="/>
+            <enclosure url="https://github.com/LegendarySpy/backpocket-updates/releases/download/v0.3.0/Backpocket.dmg" length="1436170" type="application/octet-stream" sparkle:edSignature="XSNWoZ8eo4UxULkGE//ZQVUXy/9VWnVBVSX4NYc60Vk/+JiMh9IyIdciNwkoZjrySsCnUeymKaKUFTa2Sbs3BQ=="/>
         </item>
     </channel>
 </rss>
