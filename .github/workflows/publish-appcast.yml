@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: publish-appcast
+  cancel-in-progress: true
+
 env:
   APP_NAME: Backpocket
   SPARKLE_VERSION: 2.9.4
