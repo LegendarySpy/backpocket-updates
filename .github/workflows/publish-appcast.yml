@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Check out updates site
         uses: actions/checkout@v4
+        with:
+          ref: gh-pages
 
       - name: Install Sparkle tools
         env:
