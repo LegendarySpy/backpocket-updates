@@ -40,5 +40,6 @@ the About tab.
 - [Terms of Use](https://legendaryspy.github.io/backpocket-updates/terms.html)
 - [All releases](https://github.com/LegendarySpy/backpocket-updates/releases)
 
-This public repository contains Backpocket downloads, update metadata, and
-policies. The app source is maintained separately.
+This repo holds Backpocket's downloads, update feed, and policies. The source
+code is at [LegendarySpy/backpocket](https://github.com/LegendarySpy/backpocket)
+under the AGPL-3.0 license.
